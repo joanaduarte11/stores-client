@@ -11,10 +11,8 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useState } from "react";
 
 export function UserForm({ state, handleChange, handleSubmit }) {
-
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -35,15 +33,21 @@ export function UserForm({ state, handleChange, handleSubmit }) {
             <Label htmlFor="name" className="text-right">
               Nome
             </Label>
-            <Input data-cy="input-name"
+            <Input
+              data-cy="input-name"
               onChange={handleChange}
-              value={state} 
+              value={state}
               id="name"
-              className="col-span-3" /> 
+              className="col-span-3"
+            />
           </div>
         </div>
         <DialogFooter>
-          <Button data-cy="btn-submit" onClick={handleSubmit} type="submit">Confirmar</Button> 
+          <div>
+          <Button data-cy="btn-submit" onClick={handleSubmit} type="submit">
+            Confirmar
+          </Button>
+          </div>
         </DialogFooter>
       </DialogContent>
     </Dialog>

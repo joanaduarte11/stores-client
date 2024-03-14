@@ -1,26 +1,27 @@
+import { useState } from "react";
 import { UserForm } from "../components/useForm";
 import { useNavigate } from "react-router-dom";
 
 export function LoginPage() {
-    const navigate = useNavigate();
-    const [name, setName]  = useState("");
+  const navigate = useNavigate();
+  const [name, setName] = useState("");
 
-    function handleName(e) {
-      setName(e.target.value);
-    }
+  function handleName(e) {
+    setName(e.target.value);
+  }
 
-    function handleSubmit() {
-        navigate("/");
-    }
+  function handleSubmit() {
+    navigate("/");
+  }
 
-    return (
-        <div>
-            <h2>Faça seu login aqui</h2>
-            <UserForm 
-            state={name}
-            handleChange={handleName} 
-            handleSubmit={handleSubmit}
-            />
-        </div>
-    )
+  return (
+    <div>
+      <h2>Faça seu login aqui</h2>
+      <UserForm
+        state={name}
+        handleChange={handleName}
+        handleSubmit={handleSubmit}
+      />
+    </div>
+  );
 }
